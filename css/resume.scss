@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@400,700;1,400');
-
 $underline-bg: #76ddff;
 
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {
@@ -26,7 +24,7 @@ body {
     font-weight: 400;
     color: #222;
     background-color: rgb(201, 201, 201);
-    line-height: 1.3em;
+    line-height: 1.2em;
 }
 
 .clear {
@@ -45,7 +43,7 @@ p {
     width: 90%;
     max-width: 1200px;
     background: #f3f3f3;
-    margin: 30px auto;
+    margin: 0 auto;
 }
 
 .mainDetails {
@@ -57,12 +55,14 @@ p {
         h1 {
             font-size: 2em;
             font-weight: 700;
+            letter-spacing: -0.07em;
             margin-bottom: -6px;
             position: relative;
             z-index: 10;
         }
         h2 {
             font-size: 1.5em;
+            letter-spacing: -0.08em;
             margin-left: 2px;
         }
         display: block;    
@@ -134,7 +134,7 @@ section {
 
 .sectionTitle {
     h1 {
-        overflow: wrap;
+        overflow: visible;
         font-style: italic;
         font-size: 1.5em;
         color: #cf8a05;
@@ -239,6 +239,7 @@ section {
 
     .mainDetails #name {
         text-align: left;
+        float: left;
     }
 
     .sectionTitle {
@@ -257,15 +258,14 @@ section {
     }
 
     #name { 
-        display: inline;
-        float: left;
+        display: flex;
     }
 
     #contactDetails {
+        display: block;
         float: right;
-        margin: 0;
     }
-    
+
     .subItems {
         clear: left;
         margin-left: 25px;
@@ -285,6 +285,10 @@ section {
 @media only screen and (min-width: 1024px) {
     #mainArea {
         padding: 0 40px;
+    }
+
+    .extended { 
+        display: inline;
     }
 
     .keySkills {
