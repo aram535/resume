@@ -1,421 +1,294 @@
-html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {
-    border:0;
-    font:inherit;
-    font-size:100%;
-    margin:0;
-    padding:0;
-    vertical-align:baseline;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@400,700;1,400");
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
 }
 
-article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
-    display:block;
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: flow-root;
 }
 
-html, body {
-    background: #181818;
-    font-family: 'Georgia', helvetica, arial, sans-serif;
-    font-size: 16px;
-    color: #222;
-    background-image: url("../images/business-chairs-company-coworking-7070-bw.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+html {
+  background: #181818;
 }
 
-.clear {clear: both;}
+body {
+  background: #181818;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #222;
+  background-color: #c9c9c9;
+  line-height: 1.3em;
+}
+
+.clear {
+  clear: both;
+}
 
 p {
-    font-size: 1em;
-    line-height: 1.4em;
-    margin-bottom: 20px;
-    color: #444;
+  font-size: 1em;
+  margin-bottom: 20px;
+  color: #444;
+  line-height: 1.4em;
+  text-align: justify;
 }
 
 #cv {
-    width: 90%;
-    max-width: 1200px;
-    background: #f3f3f3;
-    margin: 30px auto;
+  width: 90%;
+  max-width: 1200px;
+  background: #f3f3f3;
+  margin: 30px auto;
 }
 
 .mainDetails {
-    padding: 25px 35px;
-    border-bottom: 2px solid #cf8a05;
-    background: #ededed;
+  padding: 25px 35px;
+  border-bottom: 2px solid #cf8a05;
+  background: #ededed;
 }
 
-#name h1 {
-    font-size: 2.5em;
-    font-weight: 700;
-    margin-bottom: -6px;
+.mainDetails #name {
+  display: block;
+  line-height: 2em;
 }
 
-#name h2 {
-    font-size: 2em;
-    margin-left: 2px;
+.mainDetails #name h1 {
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: -6px;
+  position: relative;
+  z-index: 10;
+}
+
+.mainDetails #name h2 {
+  font-size: 1.5em;
+  margin-left: 2px;
+}
+
+h1::before {
+  content: ' ';
+  position: absolute;
+  width: 10rem;
+  background: #76ddff;
+  height: .4em;
+  bottom: 0;
+  z-index: -1;
 }
 
 #mainArea {
-    padding: 0 40px;
+  padding: 0 5px;
 }
 
 #headshot {
-    width: 12.5%;
-    float: left;
-    margin-right: 30px;
+  width: 25%;
+  display: block;
+  margin: 5px auto;
 }
 
 #headshot img {
-    width: 100%;
-    height: auto;
-    -webkit-border-radius: 50px;
-    border-radius: 50px;
-}
-
-#name {
-    float: left;
+  width: 100%;
+  height: auto;
+  border-radius: 50px;
 }
 
 #contactDetails {
-    float: right;
+  width: 10rem;
+  margin: 0 auto;
 }
 
 #contactDetails ul {
-    list-style-type: none;
-    font-size: 0.9em;
-    margin-top: 2px;
+  list-style-type: none;
+  font-size: 0.9em;
+  margin-top: 2px;
 }
 
 #contactDetails ul li {
-    margin-bottom: 3px;
-    color: #444;
+  color: #444;
+  margin: 5px 0;
 }
 
-#contactDetails ul li a, a[href^=tel] {
-    color: #444;
-    text-decoration: none;
-    -webkit-transition: all .3s ease-in;
-    -moz-transition: all .3s ease-in;
-    -o-transition: all .3s ease-in;
-    -ms-transition: all .3s ease-in;
-    transition: all .3s ease-in;
+#contactDetails ul li a {
+  color: #444;
+  text-decoration: none;
 }
 
 #contactDetails ul li a:hover {
-    color: #cf8a05;
+  color: #cf8a05;
 }
 
+#contactDetails ul li.social-icon {
+  text-align: center;
+  margin-left: 1rem;
+  display: inline;
+}
 
 section {
-    border-top: 1px solid #dedede;
-    padding: 20px 0 0;
+  display: block;
+  border-top: 1px solid #dedede;
+  padding: 20px 20px 0;
 }
 
 section:first-child {
-    border-top: 0;
-}
-
-.sectionTitle {
-    width: 20%;
-    max-width: 200px;
+  border-top: 0;
 }
 
 .sectionTitle h1 {
-    float: left;
-    overflow: wrap;
+  overflow: wrap;
+  font-style: italic;
+  font-size: 1.5em;
+  color: #cf8a05;
+  position: relative;
+  margin-bottom: 15px;
+  z-index: 10;
+}
+
+.sectionTitle h1::before {
+  width: 4rem;
+}
+
+.extended {
+  display: none;
 }
 
 .sectionContent {
-    float: right;
-    width: 80.0%;
-    text-align: justify;
-}
-
-.sectionTitle h1 {
-    font-style: italic;
-    font-size: 1.5em;
-    color: #cf8a05;
-    clear: both;
+  margin-left: 15px;
+  text-align: left;
+  padding-bottom: 20px;
 }
 
 .sectionContent article h1 {
-    float: left;
-    font-size: 1.45em;
-    font-weight: bold;
-    margin-top: 40px;
-    margin-bottom: 5px;
+  float: left;
+  font-size: 1.45em;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 5px;
 }
 
-.sectionContent article h1.first { margin-top: 0 !important; margin-left: 0 !important; }
-
-.sectionContent h2 {
-    float: left;
-    font-size: 1.15em;
-    font-weight: bold;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    width: 100%;
+.sectionContent article .first {
+  margin-top: 0 !important;
+  margin-left: 0 !important;
 }
 
-.sectionContent article h2 span.title {
-    float: left;
-    clear: left;
-    margin: 5px;
-    text-align: left;
+.sectionContent article .title {
+  float: left;
+  clear: left;
+  margin: 5px;
+  text-align: left;
 }
 
-.sectionContent article h2 span.duration {
-    float: right;
-    margin: 0;
-    text-align: right;
-    font-weight: normal;
+.sectionContent article .duration {
+  float: right;
+  margin: 0;
+  text-align: right;
+  font-weight: normal;
 }
 
-
-.sectionContent ul.affiliations {
-    margin-left: 20px;
-    list-style-type: square;
-}
-
-.subDetails {
-    float: right;
-    font-size: 0.8em;
-    font-style: italic;
-    margin-bottom: 3px;
-    width: 20%;
+.sectionContent article h2 {
+  float: left;
+  font-size: 1.15em;
+  font-weight: bold;
+  margin: 5px 0 5px -5px;
+  width: 100%;
 }
 
 .subItems {
-    clear: left;
-    margin-left: 25px;
-    list-style-type: square;
+  clear: left;
+  margin-left: 5px;
+  list-style-type: square;
 }
 
 .subItems li {
-    padding: 8px 0 0 0;
+  padding: 8px 0 0 0;
 }
 
 .keySkills {
-    list-style-type: none;
-    -moz-column-count:3;
-    -webkit-column-count:3;
-    padding: 0;
-    column-count:3;
-    column-rule: 1px solid gray;
-    column-gap: 25px;
-    margin-bottom: 20px;
-    font-size: 1em;
-    color: #444;
+  text-align: left;
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 10px;
+  font-size: 1em;
+  color: #444;
+  margin-left: 10px;
 }
 
-h3.skillHeader {
-    font-weight: bold;
-    padding: 7px 0;
-    border-top: 1px solid gray;
+.skillHeader {
+  font-weight: bold;
+  padding: 7px 0;
+  border-top: 1px solid gray;
 }
 
-/*
-ul.keySkills li {
-    margin: 5px 1px;
-    border-right: 2px solid gray;
+.affiliations {
+  margin-left: 20px;
+  list-style-type: square;
 }
 
-@media all and (min-width: 602px) and (max-width: 800px) {
-    #headshot {
-        display: none;
-    }
-
-    .keySkills {
-    -moz-column-count:2;
-    -webkit-column-count:2;
-    column-count:2;
-    }
+@media only screen and (min-width: 480px) {
+  body {
+    background-image: url("../images/business-chairs-company-coworking-7070-bw.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #headshot {
+    width: 12.5%;
+    float: left;
+    margin-right: 30px;
+  }
+  #headshot img {
+    width: 100%;
+    height: auto;
+    border-radius: 50px;
+  }
+  .sectionTitle {
+    float: left;
+    margin-bottom: 0;
+  }
+  .sectionContent {
+    float: right;
+    margin-left: 0;
+    width: 80.0%;
+    text-align: justify;
+  }
+  #mainArea {
+    padding: 0 15px;
+  }
+  #name {
+    display: inline;
+    float: left;
+  }
+  #contactDetails {
+    float: right;
+    margin: 0;
+  }
+  .subItems {
+    clear: left;
+    margin-left: 25px;
+    list-style-type: square;
+  }
+  .subItems li {
+    padding: 8px 0 0 0;
+  }
+  .keySkills {
+    -webkit-column-count: 2;
+            column-count: 2;
+    -webkit-column-gap: 15px;
+            column-gap: 15px;
+  }
 }
 
-@media all and (max-width: 601px) {
-    #cv {
-        width: 95%;
-        margin: 10px auto;
-        min-width: 280px;
-    }
-
-    #headshot {
-        display: none;
-    }
-
-    #name, #contactDetails {
-        float: none;
-        width: 100%;
-        text-align: center;
-    }
-
-    .sectionTitle, .sectionContent {
-        float: none;
-        width: 100%;
-    }
-
-    .sectionTitle {
-        margin-left: -2px;
-        font-size: 1.25em;
-    }
-
-    .keySkills {
-        -moz-column-count:2;
-        -webkit-column-count:2;
-        column-count:2;
-    }
+@media only screen and (min-width: 1024px) {
+  #mainArea {
+    padding: 0 40px;
+  }
+  .keySkills {
+    margin-left: 15px;
+    -webkit-column-count: 2;
+            column-count: 2;
+    -webkit-column-gap: 25px;
+            column-gap: 25px;
+  }
 }
-
-@media all and (max-width: 480px) {
-    .mainDetails {
-        padding: 15px 15px;
-    }
-
-    section {
-        padding: 15px 0 0;
-    }
-
-    #mainArea {
-        padding: 0 25px;
-    }
-
-
-    .keySkills {
-    -moz-column-count:1;
-    -webkit-column-count:1;
-    column-count:1;
-    }
-
-    #name h1 {
-        line-height: .8em;
-        margin-bottom: 4px;
-    }
-}
-
-@media print {
-    #cv {
-        width: 100%;
-    }
-}
-
-@-webkit-keyframes reset {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-@-webkit-keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-    40% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@-moz-keyframes reset {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-@-moz-keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-    40% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes reset {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-    40% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-.instaFade {
-    -webkit-animation-name: reset, fade-in;
-    -webkit-animation-duration: 1.5s;
-    -webkit-animation-timing-function: ease-in;
-
-    -moz-animation-name: reset, fade-in;
-    -moz-animation-duration: 1.5s;
-    -moz-animation-timing-function: ease-in;
-
-    animation-name: reset, fade-in;
-    animation-duration: 1.5s;
-    animation-timing-function: ease-in;
-}
-
-.quickFade {
-    -webkit-animation-name: reset, fade-in;
-    -webkit-animation-duration: 2.5s;
-    -webkit-animation-timing-function: ease-in;
-
-    -moz-animation-name: reset, fade-in;
-    -moz-animation-duration: 2.5s;
-    -moz-animation-timing-function: ease-in;
-
-    animation-name: reset, fade-in;
-    animation-duration: 2.5s;
-    animation-timing-function: ease-in;
-}
-
-.delayOne {
-    -webkit-animation-delay: 0, .5s;
-    -moz-animation-delay: 0, .5s;
-    animation-delay: 0, .5s;
-}
-
-.delayTwo {
-    -webkit-animation-delay: 0, 1s;
-    -moz-animation-delay: 0, 1s;
-    animation-delay: 0, 1s;
-}
-
-.delayThree {
-    -webkit-animation-delay: 0, 1.5s;
-    -moz-animation-delay: 0, 1.5s;
-    animation-delay: 0, 1.5s;
-}
-
-.delayFour {
-    -webkit-animation-delay: 0, 2s;
-    -moz-animation-delay: 0, 2s;
-    animation-delay: 0, 2s;
-}
-
-.delayFive {
-    -webkit-animation-delay: 0, 2.5s;
-    -moz-animation-delay: 0, 2.5s;
-    animation-delay: 0, 2.5s;
-}
-
-*/
+/*# sourceMappingURL=resume.css.map */

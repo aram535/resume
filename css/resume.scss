@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@400,700;1,400');
+
+$underline-bg: #76ddff;
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {
+    border:0;
+    font:inherit;
+    font-size:100%;
+    margin:0;
+    padding:0;
+    vertical-align:baseline;
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+    display: flow-root;
+}
+
+html {
+    background: #181818;
+}
+
+body {
+    background: #181818;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #222;
+    background-color: rgb(201, 201, 201);
+    line-height: 1.3em;
+}
+
+.clear {
+    clear: both;
+}
+
+p {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #444;
+    line-height: 1.4em;
+    text-align: justify;
+}
+
+#cv {
+    width: 90%;
+    max-width: 1200px;
+    background: #f3f3f3;
+    margin: 30px auto;
+}
+
+.mainDetails {
+    padding: 25px 35px;
+    border-bottom: 2px solid #cf8a05;
+    background: #ededed;
+
+    #name {
+        h1 {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: -6px;
+            position: relative;
+            z-index: 10;
+        }
+        h2 {
+            font-size: 1.5em;
+            margin-left: 2px;
+        }
+        display: block;    
+        line-height: 2em;
+    }
+}
+
+h1::before {
+    content: ' ';
+    position: absolute;
+    width: 10rem;
+    background: $underline-bg;
+    height: .4em;
+    bottom: 0;
+    z-index: -1;
+}
+
+#mainArea {
+    padding: 0 5px;
+}
+
+#headshot {
+    width: 25%;
+    display: block;
+    margin: 5px auto;
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 50px;
+    }
+}
+
+#contactDetails {
+    width: 10rem;
+    margin: 0 auto;
+    ul {
+        list-style-type: none;
+        font-size: 0.9em;
+        margin-top: 2px;
+
+        li {
+            color: #444;
+            margin: 5px 0;
+            a {
+                color: #444;
+                text-decoration: none;
+                &:hover {
+                    color: #cf8a05;
+                }
+            }
+        }
+        li.social-icon {
+            text-align: center;
+            margin-left: 1rem;
+            display: inline;
+        }
+    }
+}
+
+section {
+    display: block;
+    border-top: 1px solid #dedede;
+    padding: 20px 20px 0;
+    &:first-child {
+        border-top: 0;
+    }
+}
+
+.sectionTitle {
+    h1 {
+        overflow: wrap;
+        font-style: italic;
+        font-size: 1.5em;
+        color: #cf8a05;
+        position: relative;
+        margin-bottom: 15px;
+        z-index: 10;
+    }
+    h1::before {
+        width: 4rem;
+    }
+}
+
+.extended { 
+    display: none;
+}
+
+.sectionContent {
+    margin-left: 15px;
+    text-align: left;
+    padding-bottom: 20px;
+    article {
+        h1 {
+            float: left;
+            font-size: 1.45em;
+            font-weight: bold;
+            margin-top: 40px;
+            margin-bottom: 5px;
+        }
+        .first {
+            margin-top: 0 !important;
+            margin-left: 0 !important;
+        }
+        .title {
+            float: left;
+            clear: left;
+            margin: 5px;
+            text-align: left;
+        }
+        .duration {
+            float: right;
+            margin: 0;
+            text-align: right;
+            font-weight: normal;
+        }
+        h2 {
+            float: left;
+            font-size: 1.15em;
+            font-weight: bold;
+            margin: 5px 0 5px -5px;
+            width: 100%;
+        }
+    }
+}
+
+.subItems {
+    clear: left;
+    margin-left: 5px;
+    list-style-type: square;
+    li {
+        padding: 8px 0 0 0;
+    }
+}
+
+.keySkills {
+    text-align: left;
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #444;
+    margin-left: 10px;
+}
+
+.skillHeader {
+    font-weight: bold;
+    padding: 7px 0;
+    border-top: 1px solid gray;
+}
+
+.affiliations {
+    margin-left: 20px;
+    list-style-type: square;
+}
+
+@media only screen and (min-width: 480px) {
+    body {
+        background-image: url("../images/business-chairs-company-coworking-7070-bw.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #headshot {
+        width: 12.5%;
+        float: left;
+        margin-right: 30px;
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 50px;
+        }
+    }
+    .sectionTitle {
+        float: left;
+        margin-bottom: 0;
+    }
+    .sectionContent { 
+        float: right;
+        margin-left: 0;
+        width: 80.0%;
+        text-align: justify;
+    }
+
+    #mainArea {
+        padding: 0 15px;
+    }
+
+    #name { 
+        display: inline;
+        float: left;
+    }
+
+    #contactDetails {
+        float: right;
+        margin: 0;
+    }
+    
+    .subItems {
+        clear: left;
+        margin-left: 25px;
+        list-style-type: square;
+        li {
+            padding: 8px 0 0 0;
+        }
+    }
+
+    .keySkills {
+        column-count: 2;
+        column-gap: 15px;
+    }
+
+}
+
+@media only screen and (min-width: 1024px) {
+    #mainArea {
+        padding: 0 40px;
+    }
+
+    .keySkills {
+        margin-left: 15px;
+        column-count: 2;
+        column-gap: 25px;
+    }
+}
