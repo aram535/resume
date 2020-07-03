@@ -54,6 +54,7 @@ p {
 .mainDetails #name {
   display: block;
   line-height: 2em;
+  text-align: center;
 }
 
 .mainDetails #name h1 {
@@ -241,6 +242,9 @@ section:first-child {
     width: 100%;
     height: auto;
     border-radius: 50px;
+  }
+  .mainDetails #name {
+    text-align: left;
   }
   .sectionTitle {
     float: left;

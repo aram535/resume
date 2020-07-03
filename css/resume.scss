@@ -67,6 +67,7 @@ p {
         }
         display: block;    
         line-height: 2em;
+        text-align: center;
     }
 }
 
@@ -235,6 +236,11 @@ section {
             border-radius: 50px;
         }
     }
+
+    .mainDetails #name {
+        text-align: left;
+    }
+
     .sectionTitle {
         float: left;
         margin-bottom: 0;
