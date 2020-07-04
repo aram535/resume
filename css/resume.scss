@@ -1,4 +1,8 @@
+$main-bg:  #181818;
+$main-cv-color: #f3f3f3;
+$main-text-color: #222;
 $underline-bg: #76ddff;
+$title-color: #cf8a05;
 
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {
     border:0;
@@ -14,16 +18,15 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 }
 
 html {
-    background: #181818;
+    background: $main-bg;
 }
 
 body {
-    background: #181818;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 400;
-    color: #222;
-    background-color: rgb(201, 201, 201);
+    color: $main-text-color;
+    background-color: $main-bg;
     line-height: 1.2em;
 }
 
@@ -34,7 +37,6 @@ body {
 p {
     font-size: 1em;
     margin-bottom: 20px;
-    color: #444;
     line-height: 1.4em;
     text-align: justify;
 }
@@ -42,14 +44,13 @@ p {
 #cv {
     width: 90%;
     max-width: 1200px;
-    background: #f3f3f3;
+    background: $main-cv-color;
     margin: 0 auto;
 }
 
 .mainDetails {
     padding: 25px 35px;
-    border-bottom: 2px solid #cf8a05;
-    background: #ededed;
+    border-bottom: 2px solid $title-color;
 
     #name {
         h1 {
@@ -69,16 +70,6 @@ p {
         line-height: 2em;
         text-align: center;
     }
-}
-
-h1::before {
-    content: ' ';
-    position: absolute;
-    width: 10rem;
-    background: $underline-bg;
-    height: .4em;
-    bottom: 0;
-    z-index: -1;
 }
 
 #mainArea {
@@ -126,7 +117,7 @@ h1::before {
 section {
     display: block;
     border-top: 1px solid #dedede;
-    padding: 20px 20px 0;
+    padding: 20px 5px 0 5px;
     &:first-child {
         border-top: 0;
     }
@@ -137,13 +128,19 @@ section {
         overflow: visible;
         font-style: italic;
         font-size: 1.5em;
-        color: #cf8a05;
+        color: $title-color;
         position: relative;
         margin-bottom: 15px;
         z-index: 10;
     }
     h1::before {
+        content: ' ';
+        position: absolute;
         width: 4rem;
+        background: $underline-bg;
+        height: .4em;
+        bottom: -5px;
+        z-index: -1;
     }
 }
 
