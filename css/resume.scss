@@ -1,8 +1,22 @@
-$main-bg:  #181818;
-$main-cv-color: #f3f3f3;
-$main-text-color: #222;
+@import './include-media';
+
+$breakpoints: (
+  'phone': 410px,
+  'tablet': 768px,
+  'desktop': 1024px
+);
+
+//$main-bg:  #181818;
+$main-bg: orange;
+$main-cv-color: #fff;
+$primary: #222;
 $underline-bg: #76ddff;
 $title-color: #cf8a05;
+
+$tablet-width: 480px;
+$desktop-width: 1024px;
+
+$media: (phone: 480px, tablet: 768px, desktop: 1024px);
 
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {
     border:0;
@@ -17,34 +31,34 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
     display: flow-root;
 }
 
-html {
-    background: $main-bg;
+html,body {
+    height: 100vh;
+    max-width: 1920px;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 400;
-    color: $main-text-color;
-    background-color: $main-bg;
+    color: $primary;    
     line-height: 1.2em;
+    @include media (">phone") {
+        background-image: url("../images/business-chairs-company-coworking-7070-bw.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+#cv {
+    background-color: $main-cv-color;
 }
 
 .clear {
     clear: both;
 }
 
-p {
-    font-size: 1em;
-    margin-bottom: 20px;
-    line-height: 1.4em;
-    text-align: justify;
-}
-
 #cv {
     width: 90%;
-    max-width: 1200px;
-    background: $main-cv-color;
     margin: 0 auto;
 }
 
@@ -53,48 +67,92 @@ p {
     border-bottom: 2px solid $title-color;
 
     #name {
+        display: block;    
+        line-height: 2em;
+        text-align: center;
+
+        @include media(">=phone") {
+            text-align: left;
+            float: left;
+        }
         h1 {
             font-size: 2em;
             font-weight: 700;
-            letter-spacing: -0.07em;
             margin-bottom: -6px;
             position: relative;
             z-index: 10;
+            @include media(">=tablet") {
+                font-size: 3em;
+                margin-bottom: 0.2em;
+            }
+            @include media(">=desktop") {
+                font-size: 4em;
+                margin-bottom: 0.4em;
+            }
         }
         h2 {
             font-size: 1.5em;
             letter-spacing: -0.08em;
             margin-left: 2px;
+            @include media(">=tablet") {
+                font-size: 2em;
+                letter-spacing: -0.09em;
+            }
+            @include media(">=desktop") {
+                font-size: 3em;
+                letter-spacing: 0;
+            }
         }
-        display: block;    
-        line-height: 2em;
-        text-align: center;
     }
 }
 
 #mainArea {
     padding: 0 5px;
+    @include media(">phone") {
+        padding: 0 15px;
+    }
+    @include media(">=desktop") {
+        padding: 0 40px;
+    }
 }
 
 #headshot {
     width: 25%;
     display: block;
     margin: 5px auto;
+    @include media(">phone") {
+        width: 12.5%;
+        float: left;
+        margin-right: 30px;
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 50px;
+        }
+    }
     img {
         width: 100%;
         height: auto;
-        border-radius: 50px;
+        border-radius: 15px;
     }
 }
 
 #contactDetails {
     width: 10rem;
     margin: 0 auto;
+    font-size: 0.9em;
+    @include media (">phone") {
+        display: block;
+        float: right;
+        font-size: 1em;
+    }
+    @include media (">tablet") {
+        width: 12.5rem;
+        font-size: 1.2em;
+    }
     ul {
         list-style-type: none;
-        font-size: 0.9em;
         margin-top: 2px;
-
         li {
             color: #444;
             margin: 5px 0;
@@ -124,6 +182,10 @@ section {
 }
 
 .sectionTitle {
+    @include media(">phone") {
+        float: left;
+        margin-bottom: 0;
+    }
     h1 {
         overflow: visible;
         font-style: italic;
@@ -137,21 +199,37 @@ section {
         content: ' ';
         position: absolute;
         width: 4rem;
-        background: $underline-bg;
+        background-color: $underline-bg;
         height: .4em;
         bottom: -5px;
         z-index: -1;
     }
+
 }
 
 .extended { 
     display: none;
+    @include media(">=tablet") {
+        display: inline;
+    }
 }
 
 .sectionContent {
     margin-left: 15px;
     text-align: left;
     padding-bottom: 20px;
+    @include media(">phone") {
+        float: right;
+        margin-left: 0;
+        width: 80;
+        text-align: justify;
+    }
+    @include media(">=desktop") {
+        width: 90%;
+    }
+    p {
+        line-height: 1.4em;
+    }
     article {
         h1 {
             float: left;
@@ -184,6 +262,7 @@ section {
             width: 100%;
         }
     }
+
 }
 
 .subItems {
@@ -203,6 +282,16 @@ section {
     font-size: 1em;
     color: #444;
     margin-left: 10px;
+    @include media(">phone", "<desktop") {
+        column-count: 2;
+        column-gap: 15px;
+    }
+
+    @include media(">=desktop") {
+        margin-left: 15px;
+        column-count: 3;
+        column-gap: 20px;
+    }
 }
 
 .skillHeader {
@@ -214,83 +303,20 @@ section {
 .affiliations {
     margin-left: 20px;
     list-style-type: square;
-}
-
-@media only screen and (min-width: 480px) {
-    body {
-        background-image: url("../images/business-chairs-company-coworking-7070-bw.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    #headshot {
-        width: 12.5%;
-        float: left;
-        margin-right: 30px;
-        img {
-            width: 100%;
-            height: auto;
-            border-radius: 50px;
+    text-align: left;
+    list-style-type: none;
+    margin-left: 5px;
+    li {
+        a {
+            text-decoration: none;
+            color: $primary;
         }
-    }
-
-    .mainDetails #name {
-        text-align: left;
-        float: left;
-    }
-
-    .sectionTitle {
-        float: left;
-        margin-bottom: 0;
-    }
-    .sectionContent { 
-        float: right;
-        margin-left: 0;
-        width: 80.0%;
-        text-align: justify;
-    }
-
-    #mainArea {
-        padding: 0 15px;
-    }
-
-    #name { 
-        display: flex;
-    }
-
-    #contactDetails {
-        display: block;
-        float: right;
-    }
-
-    .subItems {
-        clear: left;
-        margin-left: 25px;
-        list-style-type: square;
-        li {
-            padding: 8px 0 0 0;
+        a:hover {
+            text-decoration: underline;
+            color: red;
         }
-    }
-
-    .keySkills {
-        column-count: 2;
-        column-gap: 15px;
-    }
-
-}
-
-@media only screen and (min-width: 1024px) {
-    #mainArea {
-        padding: 0 40px;
-    }
-
-    .extended { 
-        display: inline;
-    }
-
-    .keySkills {
-        margin-left: 15px;
-        column-count: 2;
-        column-gap: 25px;
+        a:active {
+            color: black;
+        }
     }
 }

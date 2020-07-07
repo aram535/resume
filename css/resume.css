@@ -11,8 +11,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: flow-root;
 }
 
-html {
-  background: #181818;
+html, body {
+  height: 100vh;
+  max-width: 1920px;
 }
 
 body {
@@ -20,25 +21,27 @@ body {
   font-size: 16px;
   font-weight: 400;
   color: #222;
-  background-color: #181818;
   line-height: 1.2em;
+}
+
+@media (min-width: 411px) {
+  body {
+    background-image: url("../images/business-chairs-company-coworking-7070-bw.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+#cv {
+  background-color: #fff;
 }
 
 .clear {
   clear: both;
 }
 
-p {
-  font-size: 1em;
-  margin-bottom: 20px;
-  line-height: 1.4em;
-  text-align: justify;
-}
-
 #cv {
   width: 90%;
-  max-width: 1200px;
-  background: #f3f3f3;
   margin: 0 auto;
 }
 
@@ -53,13 +56,33 @@ p {
   text-align: center;
 }
 
+@media (min-width: 410px) {
+  .mainDetails #name {
+    text-align: left;
+    float: left;
+  }
+}
+
 .mainDetails #name h1 {
   font-size: 2em;
   font-weight: 700;
-  letter-spacing: -0.07em;
   margin-bottom: -6px;
   position: relative;
   z-index: 10;
+}
+
+@media (min-width: 768px) {
+  .mainDetails #name h1 {
+    font-size: 3em;
+    margin-bottom: 0.2em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mainDetails #name h1 {
+    font-size: 4em;
+    margin-bottom: 0.4em;
+  }
 }
 
 .mainDetails #name h2 {
@@ -68,8 +91,34 @@ p {
   margin-left: 2px;
 }
 
+@media (min-width: 768px) {
+  .mainDetails #name h2 {
+    font-size: 2em;
+    letter-spacing: -0.09em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mainDetails #name h2 {
+    font-size: 3em;
+    letter-spacing: 0;
+  }
+}
+
 #mainArea {
   padding: 0 5px;
+}
+
+@media (min-width: 411px) {
+  #mainArea {
+    padding: 0 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #mainArea {
+    padding: 0 40px;
+  }
 }
 
 #headshot {
@@ -78,20 +127,48 @@ p {
   margin: 5px auto;
 }
 
+@media (min-width: 411px) {
+  #headshot {
+    width: 12.5%;
+    float: left;
+    margin-right: 30px;
+  }
+  #headshot img {
+    width: 100%;
+    height: auto;
+    border-radius: 50px;
+  }
+}
+
 #headshot img {
   width: 100%;
   height: auto;
-  border-radius: 50px;
+  border-radius: 15px;
 }
 
 #contactDetails {
   width: 10rem;
   margin: 0 auto;
+  font-size: 0.9em;
+}
+
+@media (min-width: 411px) {
+  #contactDetails {
+    display: block;
+    float: right;
+    font-size: 1em;
+  }
+}
+
+@media (min-width: 769px) {
+  #contactDetails {
+    width: 12.5rem;
+    font-size: 1.2em;
+  }
 }
 
 #contactDetails ul {
   list-style-type: none;
-  font-size: 0.9em;
   margin-top: 2px;
 }
 
@@ -125,6 +202,13 @@ section:first-child {
   border-top: 0;
 }
 
+@media (min-width: 411px) {
+  .sectionTitle {
+    float: left;
+    margin-bottom: 0;
+  }
+}
+
 .sectionTitle h1 {
   overflow: visible;
   font-style: italic;
@@ -139,7 +223,7 @@ section:first-child {
   content: ' ';
   position: absolute;
   width: 4rem;
-  background: #76ddff;
+  background-color: #76ddff;
   height: .4em;
   bottom: -5px;
   z-index: -1;
@@ -149,10 +233,35 @@ section:first-child {
   display: none;
 }
 
+@media (min-width: 768px) {
+  .extended {
+    display: inline;
+  }
+}
+
 .sectionContent {
   margin-left: 15px;
   text-align: left;
   padding-bottom: 20px;
+}
+
+@media (min-width: 411px) {
+  .sectionContent {
+    float: right;
+    margin-left: 0;
+    width: 80;
+    text-align: justify;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sectionContent {
+    width: 90%;
+  }
+}
+
+.sectionContent p {
+  line-height: 1.4em;
 }
 
 .sectionContent article h1 {
@@ -210,6 +319,25 @@ section:first-child {
   margin-left: 10px;
 }
 
+@media (min-width: 411px) and (max-width: 1023px) {
+  .keySkills {
+    -webkit-column-count: 2;
+            column-count: 2;
+    -webkit-column-gap: 15px;
+            column-gap: 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .keySkills {
+    margin-left: 15px;
+    -webkit-column-count: 3;
+            column-count: 3;
+    -webkit-column-gap: 20px;
+            column-gap: 20px;
+  }
+}
+
 .skillHeader {
   font-weight: bold;
   padding: 7px 0;
@@ -219,79 +347,22 @@ section:first-child {
 .affiliations {
   margin-left: 20px;
   list-style-type: square;
+  text-align: left;
+  list-style-type: none;
+  margin-left: 5px;
 }
 
-@media only screen and (min-width: 480px) {
-  body {
-    background-image: url("../images/business-chairs-company-coworking-7070-bw.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  #headshot {
-    width: 12.5%;
-    float: left;
-    margin-right: 30px;
-  }
-  #headshot img {
-    width: 100%;
-    height: auto;
-    border-radius: 50px;
-  }
-  .mainDetails #name {
-    text-align: left;
-    float: left;
-  }
-  .sectionTitle {
-    float: left;
-    margin-bottom: 0;
-  }
-  .sectionContent {
-    float: right;
-    margin-left: 0;
-    width: 80.0%;
-    text-align: justify;
-  }
-  #mainArea {
-    padding: 0 15px;
-  }
-  #name {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  #contactDetails {
-    display: block;
-    float: right;
-  }
-  .subItems {
-    clear: left;
-    margin-left: 25px;
-    list-style-type: square;
-  }
-  .subItems li {
-    padding: 8px 0 0 0;
-  }
-  .keySkills {
-    -webkit-column-count: 2;
-            column-count: 2;
-    -webkit-column-gap: 15px;
-            column-gap: 15px;
-  }
+.affiliations li a {
+  text-decoration: none;
+  color: #222;
 }
 
-@media only screen and (min-width: 1024px) {
-  #mainArea {
-    padding: 0 40px;
-  }
-  .extended {
-    display: inline;
-  }
-  .keySkills {
-    margin-left: 15px;
-    -webkit-column-count: 2;
-            column-count: 2;
-    -webkit-column-gap: 25px;
-            column-gap: 25px;
-  }
+.affiliations li a:hover {
+  text-decoration: underline;
+  color: red;
+}
+
+.affiliations li a:active {
+  color: black;
 }
 /*# sourceMappingURL=resume.css.map */
