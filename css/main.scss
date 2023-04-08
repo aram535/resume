@@ -1,0 +1,145 @@
+@import './include-media';
+
+$breakpoints: (
+  'phone': 410px,
+  'tablet': 768px,
+  'desktop': 1024px
+);
+
+$main-bg: #181818;
+$main-cv-color: rgba(218, 216, 216, 0.781);
+$primary: #222;
+$underline-bg: #76ddff;
+$title-color: #cf8a05;
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {
+    border:0;
+    font:inherit;
+    margin:0;
+    padding:0;
+    vertical-align:baseline;
+    font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) );
+    line-height: 1.5rem;
+    @include media(">phone") {
+        font-size: calc( (24 - 16) * (100vw - 400px) / (800 - 400) );
+    }
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1vw;
+    font-weight: 400;
+    color: $primary;    
+    line-height: 1.2em;
+/*    @include media (">=tablet") {
+        background-image: url("../images/business-chairs-company-coworking-7070-bw.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    */
+}
+
+.resume {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas:
+        "headshot"
+        "name"
+        "contactDetails"
+        "summary"
+        "section"
+        "workexp"
+        "footer";
+    /*
+        "headshot" "name"    "contactDetails"
+        "section"  "workexp" "date"
+        "footer"   "footer"  "footer";
+    */
+    background-color: $main-cv-color;
+}
+
+.contactInfo {
+    border-bottom: 2px solid $title-color;
+
+    .headshot {
+        grid-area: headshot;
+        text-align: center;
+        img {
+            max-width: 200px;
+            border-radius: 20px;
+        }
+    }
+
+    .name {
+        grid-area: name;
+        text-align: center;
+        h1, h2 { 
+            font-size: 2em;
+            line-height: 100%;
+        }
+    }
+
+    .contactDetails {
+        grid-area: contactDetails;
+        text-align: center;
+        font-size: 0.9em;
+        ul {
+            list-style-type: none;
+            margin-top: 2px;
+            li {
+                color: #444;
+                margin: 5px 0;
+                a {
+                    color: #444;
+                    text-decoration: none;
+                    &:hover {
+                        color: #cf8a05;
+                    }
+                }
+            }
+            li.social-icon {
+                text-align: center;
+                margin-left: 1rem;
+                display: inline;
+            }
+        }
+    }
+}
+
+.sectionTitle {
+    grid-area: section;
+    h1 {
+        overflow: visible;
+        font-style: italic;
+        font-size: 1.5em;
+        color: $title-color;
+        position: relative;
+        margin-bottom: 15px;
+        z-index: 10;
+    }
+    h1::before {
+        content: ' ';
+        position: absolute;
+        width: 4rem;
+        background-color: $underline-bg;
+        height: .4em;
+        bottom: -5px;
+        z-index: -1;
+    }
+}
+
+.sectionContent {
+    grid-area: section;
+}
+
+.section {
+    grid-area: section;
+}
+
+.workexp {
+    grid-area: workexp;
+}
+
+.footer {
+    grid-area: footer;
+}
