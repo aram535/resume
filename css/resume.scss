@@ -1,9 +1,9 @@
-@import './include-media';
-
-$breakpoints: (
-  'phone': 410px,
-  'tablet': 768px,
-  'desktop': 1024px
+@use 'media' as * with (
+  $breakpoints: (
+    'phone': 410px,
+    'tablet': 768px,
+    'desktop': 1024px
+  )
 );
 
 $main-bg: #181818;
@@ -26,7 +26,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 }
 
 html,body {
-    height: 100vh;
+    min-height: 100vh;
     max-width: 1920px;
 }
 
@@ -40,6 +40,7 @@ body {
         background-image: url("../images/business-chairs-company-coworking-7070-bw.jpg");
         background-repeat: no-repeat;
         background-size: cover;
+        background-attachment: fixed;
     }
 }
 
@@ -80,7 +81,7 @@ body {
                 margin-bottom: 0.2em;
             }
             @include media(">=desktop") {
-                font-size: 4em;
+                font-size: 3em;
                 margin-bottom: 0.4em;
             }
         }
@@ -93,7 +94,7 @@ body {
                 letter-spacing: -0.09em;
             }
             @include media(">=desktop") {
-                font-size: 3em;
+                font-size: 1.75em;
                 letter-spacing: 0;
             }
         }
@@ -110,27 +111,6 @@ body {
     }
 }
 
-#headshot {
-    width: 25%;
-    display: block;
-    margin: 5px auto;
-    @include media(">phone") {
-        width: 12.5%;
-        float: left;
-        margin-right: 30px;
-        img {
-            width: 100%;
-            height: auto;
-            border-radius: 50px;
-        }
-    }
-    img {
-        width: 100%;
-        height: auto;
-        border-radius: 15px;
-    }
-}
-
 #contactDetails {
     width: 10rem;
     margin: 0 auto;
@@ -141,8 +121,11 @@ body {
         font-size: 1em;
     }
     @include media (">tablet") {
-        width: 12.5rem;
-        font-size: 1.2em;
+        width: auto;
+        font-size: 1em;
+        li {
+            white-space: nowrap;
+        }
     }
     ul {
         list-style-type: none;
@@ -215,7 +198,7 @@ section {
     @include media(">phone") {
         float: right;
         margin-left: 0;
-        width: 80;
+        width: 80%;
         text-align: justify;
     }
     @include media(">=desktop") {
@@ -229,7 +212,7 @@ section {
             float: left;
             font-size: 1.45em;
             font-weight: bold;
-            margin-top: 40px;
+            margin-top: 20px;
             margin-bottom: 5px;
         }
         .first {
@@ -244,7 +227,7 @@ section {
         }
         .duration {
             float: right;
-            margin: 0;
+            margin: 5px 0;
             text-align: right;
             font-weight: normal;
         }
@@ -264,7 +247,7 @@ section {
     margin-left: 5px;
     list-style-type: square;
     li {
-        padding: 8px 0 0 0;
+        padding: 4px 0 0 0;
     }
 }
 
@@ -277,13 +260,15 @@ section {
     color: #444;
     margin-left: 10px;
     @include media(">phone", "<desktop") {
-        column-count: 2;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         column-gap: 15px;
     }
 
     @include media(">=desktop") {
         margin-left: 15px;
-        column-count: 3;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         column-gap: 20px;
     }
 }
@@ -292,6 +277,160 @@ section {
     font-weight: bold;
     padding: 7px 0;
     border-top: 1px solid gray;
+}
+
+/// Print / PDF export: single plain column, no imagery, compact letter-size layout
+/// so the generated PDF stays text-based and parses cleanly in ATS.
+@media print {
+    @page {
+        size: letter;
+        margin: 0.5in 0.6in;
+    }
+
+    html, body {
+        height: auto;
+        max-width: none;
+    }
+
+    body {
+        background: none;
+        font-size: 10.5pt;
+        color: #000;
+    }
+
+    #bg, #contactDetails ul li.social-icon {
+        display: none;
+    }
+
+    #cv {
+        width: 100%;
+    }
+
+    .mainDetails {
+        padding: 0 0 6pt;
+        #name {
+            float: none;
+            text-align: left;
+            line-height: 1.2;
+            h1 {
+                position: static;
+                font-size: 22pt;
+                margin: 0;
+            }
+            h2 {
+                font-size: 13pt;
+                letter-spacing: 0;
+                margin: 2pt 0 0;
+            }
+        }
+    }
+
+    #contactDetails {
+        float: none;
+        width: auto;
+        margin: 4pt 0 0;
+        font-size: 10pt;
+        ul li {
+            display: inline;
+            margin: 0 12pt 0 0;
+            color: #000;
+            a {
+                color: #000;
+            }
+        }
+    }
+
+    #mainArea {
+        padding: 0;
+    }
+
+    section {
+        padding: 8pt 0 0;
+        border-top: 1px solid #999;
+    }
+
+    .sectionTitle {
+        float: none;
+        h1 {
+            position: static;
+            font-size: 13pt;
+            font-style: normal;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 4pt;
+        }
+        h1::before {
+            display: none;
+        }
+    }
+
+    .sectionContent {
+        float: none;
+        width: auto;
+        margin: 0;
+        padding-bottom: 6pt;
+        text-align: left;
+        article {
+            h1 {
+                float: none;
+                font-size: 11.5pt;
+                margin-top: 8pt;
+                break-after: avoid;
+            }
+            h2 {
+                float: none;
+                display: flex;
+                justify-content: space-between;
+                font-size: 10.5pt;
+                margin: 2pt 0;
+                break-after: avoid;
+            }
+            .title, .duration {
+                float: none;
+                margin: 0;
+            }
+        }
+    }
+
+    .extended {
+        display: inline;
+    }
+
+    .subItems {
+        margin: 2pt 0 0;
+        padding-left: 14pt;
+        li {
+            padding-top: 2pt;
+            break-inside: avoid;
+        }
+    }
+
+    // Skills print as "Group: item, item, item" lines to keep the PDF short.
+    .skillHeader {
+        display: inline;
+        padding: 0;
+        border-top: 0;
+        &::after {
+            content: ": ";
+        }
+        &:not(:first-child)::before {
+            content: "\A";
+            white-space: pre;
+        }
+    }
+
+    .keySkills {
+        display: inline;
+        margin: 0;
+        color: #000;
+        li {
+            display: inline;
+            font-weight: normal;
+            &:not(:last-child)::after {
+                content: ", ";
+            }
+        }
+    }
 }
 
 .affiliations {

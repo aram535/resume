@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <title>Aram Mirzadeh - Curriculum Vitae</title>
+    <title>Aram Mirzadeh - Resume</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="The Curriculum Vitae of Aram Mirzadeh" />
+    <meta name="description" content="The resume of Aram Mirzadeh" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet" />
     <link type="text/css" rel="stylesheet" href="css/resume.css" />
     <!--[if lt IE 9]>
@@ -17,9 +17,6 @@
     <div id="bg"></div>
     <div id="cv">
         <div class="mainDetails">
-            <div id="headshot" class="">
-                <img src="images/headshot-amirzadeh.jpg" alt="Aram Mirzadeh" />
-            </div>
             <div id="name">
                 <h1>Aram Mirzadeh</h1>
                 <h2>Principal Platform Engineer - Secrets Management &amp; Automation</h2>
@@ -28,6 +25,7 @@
                 <ul>
                     <li>e: <a href="mailto:resume@mirzadeh.us">resume@mirzadeh.us</a></li>
                     <li>w: <a href="https://www.mirzadeh.us">www.mirzadeh.us</a></li>
+                    <li>in: <a href="https://www.linkedin.com/in/arammirzadeh/">linkedin.com/in/arammirzadeh</a></li>
                     <li>Remote &middot; Based in Centereach, NY</li>
                     <li class="social-icon">
                         <a href="https://www.linkedin.com/in/arammirzadeh/" target="_blank" rel="noopener noreferrer">
@@ -38,7 +36,7 @@
                     <li class="social-icon">
                         <a href="assets/aram-mirzadeh-resume.pdf">
                             <img src="images/pdf-icon_24x24.png" id="pdf-dl" width="24" height="24"
-                                alt="Aram Mirzadeh CV PDF" />
+                                alt="Aram Mirzadeh Resume PDF" />
                         </a>
                     </li>
                 </ul>
@@ -52,12 +50,14 @@
                         <h1>Summary</h1>
                     </div>
                     <div class="sectionContent">
-                        <p>Principal Platform Engineer specializing in HashiCorp Vault and enterprise secrets management
-                            at scale. Architected and operate ADP's production Vault Enterprise platform serving 250+
-                            application teams and 90,000+ secrets across 750+ namespaces, with 100% measured
-                            availability over 2.5+ years and zero security incidents. 24+ years of infrastructure,
-                            DevOps, and platform engineering experience spanning Linux (since 1995), AWS, Go, Terraform,
-                            and the full Grafana observability stack. Builder by preference - most days are spent
+                        <p>Principal Platform Engineer specializing in HashiCorp Vault Enterprise, secrets management,
+                            and DevSecOps automation at enterprise scale. Lead and operate ADP's production Vault
+                            Enterprise platform serving 190 application teams, 10,000+ secrets, and 1 billion+ requests
+                            per month, sustaining 18 months of 100% uptime through a dozen upgrades and DR exercises.
+                            24+ years of infrastructure, DevOps, and platform engineering experience spanning Linux
+                            (since 1995), AWS, Go, Terraform infrastructure as code, CI/CD, high availability and
+                            disaster recovery, policy as code, and the full Grafana observability
+                            stack. Builder by preference - most days are spent
                             writing Go, Terraform, and dashboards rather than running tickets.</p>
                     </div>
                 </article>
@@ -65,78 +65,78 @@
             </section>
             <section>
                 <div class="sectionTitle">
-                    <h1>Experience</h1>
+                    <h1>Professional Experience</h1>
                 </div>
                 <div class="sectionContent">
                     <article>
                         <h1>
-                            <span class="companyName">Automatic Data Processing, LLC (ADP)</span>
-                            <span id="companyLocation">Parsippany, NJ (Fully Remote)</span>
+                            <span class="companyName">Automatic Data Processing, LLC (ADP)</span> - <span class="companyLocation">Parsippany, NJ (Remote)</span>
                         </h1>
                         <h2>
-                            <span class="title">Sr Lead Application Developer (Vault Platform Engineering)</span>
+                            <span class="title">Senior Lead Application Developer (Vault Platform Engineering)</span>
                             <span class="duration">(Current) Nov 2021 - Present</span>
                         </h2>
+                        <h2>
+                            <span class="title">Vault Consultant / SME (via NTT Data)</span>
+                            <span class="duration">(6 months) May 2021 - Nov 2021</span>
+                        </h2>
                         <ul class="subItems">
-                            <li>Architect and operate ADP's enterprise HashiCorp Vault platform since founding the
-                                practice as an NTT Data consultant in May 2021 (converted to FTE November 2021);
-                                platform comprises 3 production Vault Enterprise clusters (5 nodes each, AWS ASG-backed)
-                                with paired DR clusters, supporting 750+ namespaces across 250+ application teams and
-                                managing 90,000+ production secrets - up from 34 teams and ~4,000 secrets at
-                                platform inception.</li>
-                            <li>Maintained 100% measured availability over 2.5+ years as tracked by a global Dynatrace
-                                synthetic-monitoring fleet performing continuous authentication and read/write
-                                validation; achieved through rolling cluster upgrades with zero downtime and live DR
-                                failovers limited to a 60-second read-only window during DNS cutover.</li>
-                            <li>Zero security incidents across 250+ integrated teams and 90,000+ secrets over 2.5+
-                                years, including successful defense against multiple HashiCorp-disclosed
-                                critical-severity zero-day vulnerabilities through layered access controls and security
-                                mitigations.</li>
-                            <li>Drove growth from 34 to 250+ onboarded teams by partnering with InfoSec on the global
-                                secrets-reduction initiative and architecting a fully-automated, ServiceNow-driven
-                                onboarding pipeline that provisions namespaces, roles, and access levels without manual
-                                intervention - supported by AI-powered Webex support bots (continuously retrained
-                                against the latest FAQ, learnings, and platform changes) and triggered-action bots that
-                                together eliminated the need for multiple full-time support positions otherwise required
-                                at this scale.</li>
-                            <li>Built and operate the platform's observability and self-healing tooling, including a
-                                suite of custom Go applications that surface signal hidden from Vault's native audit
-                                logs and metrics - correlating opaque mount IDs back to namespaces and
-                                configurations to root-cause issues like dynamic database engines orphaned by upstream
-                                database upgrades, mis-assigned policies, over-permissive policy drift, Kubernetes auth
-                                certificate failures, and entity utilization patterns; outputs feed both the Grafana
-                                stack (Grafana, Alloy, Loki, Mimir) and Splunk.</li>
-                            <li>Capacity planning and license management driven by telemetry - the same
-                                observability data informs resource right-sizing decisions and underpinned the 5-year
-                                HashiCorp Vault Enterprise license renewal signed with IBM, ensuring user license counts
-                                are projected accurately through the contract term.</li>
-                            <li>Author and maintain Sentinel policy-as-code to enforce business, security, and
-                                technical-debt policies - including rate-limiting controls applied to misbehaving
-                                applications and teams to protect cluster stability, and progressively-tightening
-                                guardrails on permitted actions and access patterns.</li>
-                            <li>Own all platform infrastructure-as-code using HashiCorp Terraform and Packer, managing
-                                AWS resources including EC2, Auto Scaling Groups, Application Load Balancers, S3 (backup
-                                and Terraform state), and IAM - with all changes delivered through ADP's Bitbucket
-                                / Jenkins / Artifactory GitOps pipeline. Partner daily with the Global Network Services
-                                (GNS), Global Security Organization (GSO), and CI/CD platform (FerrisWheel) teams on
-                                firewall and policy requirements, pipeline automation, and platform integration.</li>
-                            <li>Operate the full Vault Enterprise feature set in production: KV v2, dynamic database
-                                secrets (Oracle, MySQL, PostgreSQL, Snowflake), PKI, Transit, SSH, and Cubbyhole
-                                engines; LDAP/Active Directory, AppRole, Cert, Kubernetes, SAML/OIDC, and userpass auth
-                                methods; AWS IAM role access; Sentinel governance policies; multi-tenant namespace
-                                isolation; and enforced MFA for human access.</li>
-                            <li>Lead Vault enablement across ADP through twice-weekly office hours, on-demand
-                                architecture reviews, and a bi-monthly "Learn2Vault" deep-dive series - supporting
-                                passing audits including a NIST 800-53 control review of the Vault platform and
-                                team-driven PCI and HIPAA reviews.</li>
+                            <li>Own the architecture and operation of ADP's enterprise HashiCorp Vault platform - 3
+                                multi-region production Vault Enterprise clusters on AWS with paired DR - growing it from
+                                34 to 190 application teams and ~4,000 to 10,000+ secrets, now serving 1 billion+
+                                requests per month.</li>
+                            <li>Lead cluster lifecycle, high availability, and disaster recovery, sustaining 18 months
+                                of 100% uptime across a dozen zero-downtime upgrades and DR exercises; drive incident
+                                response and root-cause analysis, hardening Raft quorum resilience and recovery
+                                runbooks.</li>
+                            <li>Lead security, compliance, and identity architecture - Sentinel policy-as-code
+                                guardrails, BYOK/CMK key-custody controls, CVE/SCA remediation, and NIST 800-53, PCI, and
+                                HIPAA audit remediation - while modernizing authentication across Active Directory/LDAP,
+                                Kubernetes, and SAML/OIDC.</li>
+                            <li>Design and build the platform's observability and alerting stack (Grafana, Loki, Mimir,
+                                Prometheus, Splunk, Dynatrace) with severity-routed notifications; its telemetry drives
+                                capacity planning and underpinned the 5-year Vault Enterprise license renewal with
+                                IBM.</li>
+                            <li>Own all platform infrastructure as code (Terraform, Packer, AWS EC2, Auto Scaling
+                                Groups, IAM) through a Bitbucket / Jenkins / Artifactory GitOps pipeline, and build Go
+                                and Python SDKs and tooling that automate Vault authentication, inventory, access
+                                review, and policy-drift detection; lead migrations off legacy services.</li>
+                            <li>Drove enterprise adoption through a fully automated ServiceNow onboarding pipeline, a
+                                secrets-reduction partnership with InfoSec, and AI-powered ChatOps support bots that
+                                replaced multiple full-time support roles; lead enablement through office hours,
+                                architecture reviews, and the "Learn2Vault" series.</li>
                         </ul>
                     </article>
                 </div>
                 <div class="sectionContent">
                     <article>
                         <h1>
-                            <span class="companyName">NTT, Ltd. (Fully Remote)</span>
-                            <span class="extended">(was Dimension Data)</span> - <span id="companyLocation">Hauppauge,
+                            <span class="companyName">Megabyte Consulting</span> - <span class="companyLocation">Centereach, NY (Remote)</span>
+                        </h1>
+                        <h2>
+                            <span class="title">Senior Java Programmer / DevOps Consultant</span>
+                            <span class="duration">(2 years) 2019 - 2021</span>
+                        </h2>
+                        <ul class="subItems">
+                            <li>Provided remote engineering support to Java development teams during the COVID-19
+                                transition to remote work, helping teams adapt build, release, and collaboration
+                                workflows for fully distributed delivery.</li>
+                            <li>Designed, set up, and optimized CI/CD pipelines using Jenkins, GitLab CI, Git, and
+                                JFrog Artifactory - standardizing build automation, artifact management, and release
+                                processes to reduce build times and manual hand-offs.</li>
+                            <li>Implemented Software Composition Analysis (SCA) and code-quality scanning with JFrog
+                                Xray and SonarQube, integrating open-source dependency vulnerability and license checks
+                                directly into pipelines to shift security left in a DevSecOps model.</li>
+                            <li>Refactored and performance-tuned client Java services and containerized builds with
+                                Docker for consistent, repeatable deployments.</li>
+                        </ul>
+                    </article>
+                </div>
+                <div class="sectionContent">
+                    <article>
+                        <h1>
+                            <span class="companyName">NTT, Ltd.</span>
+                            <span class="extended">(formerly Dimension Data)</span> - <span class="companyLocation">Hauppauge,
                                 NY (Remote)</span>
                         </h1>
                         <h2>
@@ -144,33 +144,23 @@
                             <span class="duration">(17 years) 2002 - 2019</span>
                         </h2>
                         <ul class="subItems">
-                            <li>Designed, built, and ran a SaaS network-assessment platform that generated $100M in
-                                direct annual sales and $800M in annual follow-on revenue in related services and parts
-                                at peak - averaging 600 customer assessments per year over the platform's life.
-                            </li>
-                            <li>Owned the 16TB Data Lake / Warehouse infrastructure that powered Dimension Data's
-                                flagship "Network Barometer Report" - the company's annual public industry report
-                                cited by Gartner and other major research firms, derived directly from customer scan
-                                data flowing through systems I designed and operated.</li>
+                            <li>Designed, built, and ran a SaaS network-assessment platform and its 16TB data lake -
+                                generating $100M in direct annual sales and $800M in annual follow-on revenue at peak
+                                (~600 customer assessments per year) and powering the Gartner-cited annual "Network
+                                Barometer Report".</li>
                             <li>Founded and championed the company-wide "Global DevOps Tools" initiative, a unified
                                 platform built on GitLab (source + CI/CD), JFrog Artifactory (artifact and container
                                 storage), JFrog Xray (security scanning), SonarQube (code analysis), and HashiCorp Vault
                                 (secrets) - delivering $3M in direct cost savings plus multi-million in licensing
                                 consolidation through reduced total cost of ownership, with patterns later adopted
                                 across Dimension Data business units.</li>
-                            <li>First introduction of HashiCorp Vault into the organization (~2017, Vault 0.7 era),
-                                implementing a globally fault-tolerant, highly-available secrets-management platform
-                                with OTP authentication and SSH CA capabilities - building the foundation for what
-                                is now ~8 years of continuous Vault production experience.</li>
-                            <li>Acted as Technical Product Manager for three global products (Assessment Automation,
-                                Innersourcing, Global DevOps Tools), collaborating cross-departmentally to gather
-                                requirements, prioritize the roadmap, and deliver against aggressive global delivery
-                                schedules across multiple regions.</li>
-                            <li>Managed an international engineering team of up to 15 (5 core FTEs plus contractors)
-                                building Java, PHP, and AngularJS services; held hire/fire authority, owned job
-                                descriptions and HR engagement, and led the migration of a monolithic assessment
-                                application to a Kubernetes-based microservices architecture. Originally joined as a
-                                6-month contractor (via Lloyd Staffing) in 2002 and converted to FTE in 2003.</li>
+                            <li>Introduced HashiCorp Vault to the organization (~2017, Vault 0.7 era), implementing a
+                                globally fault-tolerant, highly available secrets-management platform with OTP
+                                authentication and SSH CA capabilities.</li>
+                            <li>Served as Technical Product Manager for three global products (Assessment Automation,
+                                Innersourcing, Global DevOps Tools) and managed an international engineering team of up
+                                to 15 (5 core FTEs plus contractors) building Java, PHP, and AngularJS services, with
+                                hire/fire authority and roadmap ownership.</li>
                         </ul>
                     </article>
                 </div>
@@ -178,7 +168,7 @@
             </section>
             <section>
                 <div class="sectionTitle">
-                    <h1>Key Skills</h1>
+                    <h1>Skills</h1>
                 </div>
                 <div class="sectionContent">
                     <article>
@@ -194,6 +184,40 @@
                             <li>LDAP / Active Directory</li>
                             <li>MFA</li>
                         </ul>
+                        <h3 class="skillHeader">Vault Engines &amp; Auth Methods</h3>
+                        <ul class="keySkills">
+                            <li>KV v2</li>
+                            <li>Dynamic Database Secrets</li>
+                            <li>PKI</li>
+                            <li>Transit</li>
+                            <li>SSH</li>
+                            <li>Cubbyhole</li>
+                            <li>AppRole</li>
+                            <li>Kubernetes Auth</li>
+                            <li>AWS IAM Auth</li>
+                            <li>Cert Auth</li>
+                            <li>Userpass</li>
+                            <li>Raft Integrated Storage</li>
+                            <li>DR Replication</li>
+                            <li>Multi-tenant Namespaces</li>
+                        </ul>
+                        <h3 class="skillHeader">Security &amp; Compliance</h3>
+                        <ul class="keySkills">
+                            <li>DevSecOps</li>
+                            <li>Software Composition Analysis (SCA)</li>
+                            <li>Policy as Code</li>
+                            <li>High Availability / Disaster Recovery</li>
+                            <li>NIST 800-53</li>
+                            <li>PCI</li>
+                            <li>HIPAA</li>
+                        </ul>
+                        <h3 class="skillHeader">Databases</h3>
+                        <ul class="keySkills">
+                            <li>Oracle</li>
+                            <li>PostgreSQL</li>
+                            <li>MySQL</li>
+                            <li>Snowflake</li>
+                        </ul>
                         <h3 class="skillHeader">Infrastructure as Code &amp; Automation</h3>
                         <ul class="keySkills">
                             <li>HashiCorp Terraform</li>
@@ -201,15 +225,13 @@
                             <li>Ansible</li>
                             <li>Makefile</li>
                             <li>Bash / Shell scripting</li>
-                        </ul>
-                        <h3 class="skillHeader">Cloud &amp; Platforms</h3>
-                        <ul class="keySkills">
-                            <li>AWS - EC2, Auto Scaling Groups, ALB, S3, IAM, KMS (auto-unseal), Route 53</li>
-                            <li>Linux - RHEL 8/9/10, Ubuntu (Linux user since 1995)</li>
-                            <li>Docker</li>
-                            <li>Kubernetes (integration)</li>
                             <li>ServiceNow</li>
                         </ul>
+                        <h3 class="skillHeader">Cloud, Linux &amp; Containers</h3>
+                        <ul class="keySkills">
+                            <li>AWS Architecture - EC2, ASG, ALB, S3, IAM, KMS, Route 53</li>
+                            <li>Linux - RHEL 8/9/10, Ubuntu (Linux user since 1995)</li>
+                            <li>Docker</li>                        </ul>
                         <h3 class="skillHeader">Languages</h3>
                         <ul class="keySkills">
                             <li>Go (Golang)</li>
@@ -238,6 +260,7 @@
                             <li>Git</li>
                             <li>GitHub</li>
                             <li>JFrog Artifactory</li>
+                            <li>JFrog Xray</li>
                             <li>SonarQube</li>
                         </ul>
                         <h3 class="skillHeader">Methodologies</h3>
@@ -253,23 +276,11 @@
             </section>
             <section>
                 <div class="sectionTitle">
-                    <h1>Certifications</h1>
-                </div>
-                <div class="sectionContent">
-                    <article>
-                        <p>HashiCorp Vault Operations Professional - Target 2026</p>
-                        <p>HashiCorp Terraform Associate - Target 2027</p>
-                    </article>
-                </div>
-                <div class="clear"></div>
-            </section>
-            <section>
-                <div class="sectionTitle">
                     <h1>Education</h1>
                 </div>
                 <div class="sectionContent">
                     <article>
-                        <p>University of Phoenix, Bachelors degree in eBusiness</p>
+                        <p>University of Phoenix - Bachelor's Degree, eBusiness</p>
                     </article>
                 </div>
                 <div class="clear"></div>

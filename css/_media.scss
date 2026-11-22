@@ -1,0 +1,65 @@
+/// Minimal width-based media query mixin, replacing the include-media library.
+/// Supports expressions of the form `<operator><breakpoint>` where the operator
+/// is one of `>=`, `>`, `<=`, `<` and the breakpoint is a key of `$breakpoints`.
+/// @example scss
+///   @use 'media' as * with ($breakpoints: ('tablet': 768px));
+///   .a { @include media('>tablet') { color: red; } }
+
+@use 'sass:map';
+@use 'sass:string';
+
+/// Named breakpoints available to `media()`; override with `@use ... with`.
+/// @type Map
+$breakpoints: (
+  'phone': 410px,
+  'tablet': 768px,
+  'desktop': 1024px
+) !default;
+
+/// Operators checked longest-first so `>=` is not mistaken for `>`.
+/// @type List
+$_operators: ('>=', '<=', '>', '<');
+
+/// Converts a single expression such as `>=tablet` into a media feature.
+/// @param {String} $expression - Operator followed by a breakpoint name
+/// @return {String} Media feature, e.g. `(min-width: 768px)`
+/// @throws Unknown breakpoint or unsupported expression
+@function _to-feature($expression) {
+  @each $operator in $_operators {
+    @if string.index($expression, $operator) == 1 {
+      $name: string.slice($expression, string.length($operator) + 1);
+      @if not map.has-key($breakpoints, $name) {
+        @error 'Unknown breakpoint `#{$name}` in `#{$expression}`.';
+      }
+      $value: map.get($breakpoints, $name);
+      @if $operator == '>=' {
+        @return '(min-width: #{$value})';
+      } @else if $operator == '>' {
+        @return '(min-width: #{$value + 1px})';
+      } @else if $operator == '<=' {
+        @return '(max-width: #{$value})';
+      } @else {
+        @return '(max-width: #{$value - 1px})';
+      }
+    }
+  }
+  @error 'Unsupported media expression `#{$expression}`.';
+}
+
+/// Wraps the content in a media query that combines all expressions with `and`.
+/// @param {Arglist} $conditions - Expressions such as `>phone`, `<desktop`
+/// @content Styles applied within the media query
+@mixin media($conditions...) {
+  $query: '';
+  @each $condition in $conditions {
+    $feature: _to-feature($condition);
+    @if $query == '' {
+      $query: $feature;
+    } @else {
+      $query: '#{$query} and #{$feature}';
+    }
+  }
+  @media #{$query} {
+    @content;
+  }
+}
